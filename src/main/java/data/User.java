@@ -24,10 +24,14 @@ public class User {
 
     public void greet() {
         System.out.printf("Hello%s!\nWelcome to our Warehouse Database.\nIf you don't find what you are looking for," +
-                "\nplease ask one of our staff members to assist you.\n", (name.equals("Anonymous")) ? "" : (", ".concat(name))); // extract method!!
+                "\nplease ask one of our staff members to assist you.\n", showUserName());
     }
 
     public void bye(List<String> actions) {
-        System.out.printf("Thank you for your visit%s!\n", (name.equals("Anonymous")) ? "" : (", ".concat(name))); // extract method!!
+        System.out.printf("Thank you for your visit%s!\n", showUserName());
+    }
+
+    private String showUserName() {
+        return (name.equals("Anonymous")) ? "" : (", ".concat(name));
     }
 }
